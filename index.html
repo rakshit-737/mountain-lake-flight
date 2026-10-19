@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08181b" />
+    <meta name="description" content="Fly a small seaplane through the misty mountains of Mistfall Lake." />
+    <title>Lakewarden — Mistfall Lake</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="world" aria-label="3D view of Mistfall Lake"></canvas>
+
+      <div class="grain" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark"><span></span><span></span><span></span></div>
+          <div>
+            <div class="eyebrow">AERIA EXPEDITIONS</div>
+            <div class="brand-name">LAKEWARDEN</div>
+          </div>
+        </div>
+        <div class="mission-code"><span class="status-dot"></span> FLIGHT SIM <span class="slash">//</span> LIVE</div>
+      </header>
+
+      <main class="hud">
+        <section class="intro-panel glass-panel">
+          <div class="eyebrow accent">EXPEDITION 04 / NORTHERN RANGE</div>
+          <h1>Find your<br /><em>altitude.</em></h1>
+          <p>Follow the silver water into Mistfall Lake. The old survey beacon is waiting beyond the falls.</p>
+          <div class="location-row"><span class="pin">+</span><span>MISTFALL LAKE</span><span class="coordinates">61° 07' N / 149° 54' W</span></div>
+        </section>
+
+        <section class="field-notes glass-panel">
+          <div class="card-label">FIELD NOTES <span>● REC</span></div>
+          <div class="notes-grid">
+            <div><strong>1,240</strong><span>ALTITUDE <small>M</small></span></div>
+            <div><strong>07</strong><span>WIND <small>KT</small></span></div>
+            <div><strong id="visibility">CLEAR</strong><span>VISIBILITY</span></div>
+          </div>
+          <div class="compass"><span>N</span><i></i><span>S</span><b>W</b><strong>E</strong></div>
+        </section>
+
+        <section class="mission-panel glass-panel">
+          <div class="card-label">ACTIVE ROUTE <span class="route-icon">↗</span></div>
+          <div class="route-title" id="mission-title">FLY THE FALL</div>
+          <div class="route-copy" id="mission-copy">Pass through the amber beacon above the waterfall.</div>
+          <div class="progress-track"><span id="progress-bar"></span></div>
+          <div class="route-footer"><span id="progress-label">01 / 03 CHECKPOINTS</span><span id="distance-label">2.4 KM</span></div>
+        </section>
+
+        <section class="control-panel glass-panel">
+          <div class="card-label">FLIGHT CONTROLS <span class="keyboard-icon">⌘</span></div>
+          <div class="controls-row"><kbd>W</kbd><span>THROTTLE</span><kbd>A</kbd><kbd>D</kbd><span>STEER</span></div>
+          <div class="controls-row"><kbd>↑</kbd><kbd>↓</kbd><span>CLIMB / DIVE</span><kbd>SHIFT</kbd><span>BOOST</span></div>
+          <div class="control-hint">DRAG TO LOOK AROUND <span>•</span> <b>P</b> PAUSE</div>
+        </section>
+
+        <div class="reticle" aria-hidden="true"><span></span><i></i></div>
+        <div class="altitude-readout"><span>ALT</span><strong id="altitude-value">1240</strong><small>M</small></div>
+        <div class="speed-readout"><span>SPD</span><strong id="speed-value">07</strong><small>KT</small></div>
+      </main>
+
+      <div class="start-overlay" id="start-overlay">
+        <div class="start-copy">
+          <div class="eyebrow accent">FIELD STATION / ONLINE</div>
+          <div class="start-rule"></div>
+          <p class="start-kicker">THE LAST LIGHT CATCHES<br />THE WATERFALL</p>
+          <button id="launch-button" class="launch-button">LAUNCH EXPEDITION <span>↗</span></button>
+          <div class="start-meta"><span>WASD / ARROWS TO PILOT</span><span>∞ FREE FLIGHT</span></div>
+        </div>
+      </div>
+
+      <div class="toast" id="toast" role="status"></div>
+      <div class="pause-badge" id="pause-badge">PAUSED <span>PRESS P TO RESUME</span></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
